@@ -1,0 +1,15 @@
+{
+  "name": "babel-plugin-rename-gql-operations",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "babel-plugin-tester": "^9.2.0",
+    "graphql": "^15.3.0",
+    "jest": "^26.2.2"
+  },
+  "dependencies": {
+    "@babel/template": "^7.10.4"
+  }
+}

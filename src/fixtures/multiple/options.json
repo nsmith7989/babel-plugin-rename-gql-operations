@@ -1,0 +1,6 @@
+{
+  "nameMapping": {
+    "foo": "renamed",
+    "baz": "renamed2"
+  }
+}

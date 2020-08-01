@@ -69,7 +69,7 @@ module.exports = function renameGqlOperationNames({ types: t }) {
   };
 };
 
-function rename(string, nameMapping) {
+function rename(string, nameMapping = {}) {
   const normalizedString = normalize(string);
   if (!normalizedString) {
     return string;

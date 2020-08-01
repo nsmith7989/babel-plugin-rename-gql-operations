@@ -16,7 +16,7 @@ const query = gql`
       ...B
     }
   }
-  ${fragment}
+  ${fragement}
 `;
 
 const differentTTL = abc`

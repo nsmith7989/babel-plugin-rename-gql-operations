@@ -11,5 +11,9 @@
   },
   "dependencies": {
     "@babel/template": "^7.10.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "nsmith7989/nsmith7989/babel-plugin-rename-gql-operations"
   }
 }

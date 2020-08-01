@@ -27,6 +27,7 @@ const foo = gql` query renameFoo { bar } `
 ```
 
 ## .babelrc
+```
 {
 "plugins": [
     [
@@ -39,3 +40,4 @@ const foo = gql` query renameFoo { bar } `
     ]
   ]
 }
+```

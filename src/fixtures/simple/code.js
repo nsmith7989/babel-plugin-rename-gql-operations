@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { abc } from "whatever";
+import def from "def";
 
 const fragement = gql`
   fragment a on B {
@@ -21,6 +22,10 @@ const query = gql`
 
 const differentTTL = abc`
   abcd
+`;
+
+const thirdTTL = def`
+  this will be not transformed
 `;
 
 export function useRunQuery() {

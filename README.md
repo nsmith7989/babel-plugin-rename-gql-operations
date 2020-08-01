@@ -1,12 +1,15 @@
 # babel-plugin-rename-gql-operations
+
 Rename graphql operation names
 
 # Motivation
+
 If your gql backend requires specific gql names, but those names are not known at author time
 
 # Example
 
 Input:
+
 ```
 import gql from 'graphql-tag';
 // if using apollo v3
@@ -22,11 +25,13 @@ const foo = gql` query foo { bar } `
 ```
 
 Output:
+
 ```
 const foo = gql` query renameFoo { bar } `
 ```
 
 ## .babelrc
+
 ```
 {
 "plugins": [
@@ -35,7 +40,8 @@ const foo = gql` query renameFoo { bar } `
       {
         "nameMapping": {
           # your specific mappings
-        }
+        },
+        "importSources": [] # defaults to `["graphql-tag", "@apollo/client"]`
       }
     ]
   ]

@@ -1,5 +1,4 @@
 const { parse, print, visit } = require("graphql/language");
-const template = require("@babel/template").default;
 
 module.exports = function renameGqlOperationNames({ types: t }) {
   const TemplateElementVisitor = {
@@ -22,7 +21,6 @@ module.exports = function renameGqlOperationNames({ types: t }) {
     ImportDeclaration(path) {
       const {
         importSources = ["graphql-tag", "@apollo/client"],
-        onlyMatchImportSuffix = false,
       } = this.options;
       const pathValue = path.node.source.value;
       const gqlSpecifier = path.node.specifiers.find((specifier) => {
@@ -30,15 +28,9 @@ module.exports = function renameGqlOperationNames({ types: t }) {
           return specifier.local.name === "gql";
         }
 
-        if (t.isImportDefaultSpecifier(specifier)) {
-          return importSources.some((source) => {
-            return onlyMatchImportSuffix
-              ? pathValue.endsWith(source)
-              : pathValue === source;
-          });
-        }
-
-        return null;
+        return importSources.some((source) => {
+          return pathValue === source;
+        });
       });
       if (gqlSpecifier) {
         this.tagNames.push(gqlSpecifier.local.name);
@@ -59,6 +51,9 @@ module.exports = function renameGqlOperationNames({ types: t }) {
       Program(programPath, state) {
         const tagNames = [];
         const nameMapping = state.opts.nameMapping;
+        if (!nameMapping) {
+          return;
+        }
         programPath.traverse(ProgramVisitor, {
           tagNames,
           nameMapping,

@@ -3,6 +3,9 @@
   "version": "1.0.1",
   "main": "src/index.js",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "@babel/core": "7.7.7",
     "babel-plugin-tester": "^9.2.0",

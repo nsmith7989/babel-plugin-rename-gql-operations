@@ -7,7 +7,7 @@ const query1 = gql`
   }
 `;
 const query2 = gql`
-  query renamed2 {
+  query baz {
     a {
       b
     }

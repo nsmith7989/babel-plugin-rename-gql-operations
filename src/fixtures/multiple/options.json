@@ -1,6 +1,5 @@
 {
   "nameMapping": {
-    "foo": "renamed",
-    "baz": "renamed2"
+    "foo": "renamed"
   }
 }
